@@ -3,7 +3,7 @@ items:
 - uid: az_network_nic
   name: az network nic
   summary: Manage network interfaces.
-  description: ''
+  description: To learn more about network interfaces in Azure visit <a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface">https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface</a>.
   langs:
   - azurecli
   children:
@@ -15,16 +15,19 @@ items:
 - uid: az_network_nic_create
   name: az network nic create
   summary: Create a network interface.
-  description: ''
+  description: To learn more about network interfaces in Azure visit <a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface">https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface</a>.
   langs:
   - azurecli
   examples:
   - summary: Create a network interface for a specified subnet on a specified virtual network.
     syntax:
       content: az network nic create -g MyResourceGroup --vnet-name MyVnet --subnet MySubnet -n MyNic
-  - summary: Create a network interface for a specified subnet on a virtual network which allows IP forwarding subject to a network security group.
+  - summary: Create a network interface for a specified subnet on a virtual network which allows
     syntax:
       content: az network nic create -g MyResourceGroup --vnet-name MyVnet --subnet MySubnet -n MyNic     --ip-forwarding --network-security-group MyNsg
+  - summary: Create a network interface for a specified subnet on a virtual network with network security group and application security groups.
+    syntax:
+      content: az network nic create -g MyResourceGroup --vnet-name MyVnet     --subnet MySubnet -n MyNic --network-security-group MyNsg     --network-security-group MyNsg --application-security-groups Web App
   parameters:
   - isRequired: true
     name: --name -n
@@ -43,10 +46,10 @@ items:
     summary: Enable IP forwarding.
     description: ''
   - name: --lb-address-pools
-    summary: Space separated list of names or IDs of load balancer address pools to associate with the NIC. If names are used, --lb-name must be specified.
+    summary: Space-separated list of names or IDs of load balancer address pools to associate with the NIC. If names are used, --lb-name must be specified.
     description: ''
   - name: --lb-inbound-nat-rules
-    summary: Space separated list of names or IDs of load balancer inbound NAT rules to associate with the NIC. If names are used, --lb-name must be specified.
+    summary: Space-separated list of names or IDs of load balancer inbound NAT rules to associate with the NIC. If names are used, --lb-name must be specified.
     description: ''
   - name: --lb-name
     summary: The name of the load balancer to use when adding NAT rules or address pools by name (ignored when IDs are specified).
@@ -64,13 +67,13 @@ items:
     summary: Name or ID of an existing public IP address, or none by default.
     description: ''
   - name: --tags
-    summary: Space separated tags in 'key[=value]' format. Use "" to clear existing tags.
+    summary: Space-separated tags in 'key[=value]' format. Use "" to clear existing tags.
     description: ''
   - name: --vnet-name
     summary: The virtual network (VNet) name.
     description: ''
   - name: --dns-servers
-    summary: Space separated list of DNS server IP addresses.
+    summary: Space-separated list of DNS server IP addresses.
     description: ''
   - name: --internal-dns-name
     summary: The internal DNS name label.
@@ -78,7 +81,7 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_nic_delete
@@ -99,13 +102,13 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_nic_list
   name: az network nic list
   summary: List network interfaces.
-  description: Does not list network interfaces attached to VMs in VM scale sets. Use 'az vmss nic list' or 'az vmss nic list-vm-nics' to display that information.
+  description: Does not list network interfaces attached to VMs in VM scale sets. Use 'az vmss nic list' or 'az vmss nic list-vm-nics' to display that information. To learn more about network interfaces in Azure visit <a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface">https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface</a>.
   langs:
   - azurecli
   examples:
@@ -119,13 +122,13 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_nic_show
   name: az network nic show
   summary: Get the details of a network interface.
-  description: ''
+  description: To learn more about network interfaces in Azure visit <a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface">https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface</a>.
   langs:
   - azurecli
   examples:
@@ -147,13 +150,13 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_nic_update
   name: az network nic update
   summary: Update a network interface.
-  description: ''
+  description: To learn more about network interfaces in Azure visit <a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface">https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface</a>.
   langs:
   - azurecli
   examples:
@@ -177,7 +180,7 @@ items:
     summary: Name or ID of the associated network security group.
     description: ''
   - name: --dns-servers
-    summary: Space separated list of DNS server IP addresses. Use "" to revert to default Azure servers.
+    summary: Space-separated list of DNS server IP addresses. Use "" to revert to default Azure servers.
     description: ''
   - name: --internal-dns-name
     summary: The internal DNS name label.
@@ -194,7 +197,7 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 commands:
@@ -262,9 +265,9 @@ globalParameters:
   summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
 - name: --verbose
   summary: Increase logging verbosity. Use --debug for full debug logs.
-doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
+doc_source_url_repo: https://github.com/Azure/azure-cli/blob/dev/
 doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/00f4c903221240501ae124a99a421b3069116335/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-updated_at: 1/25/2018 12:43:57 AM
-ms.date: 1/25/2018
+original_content_git_url: https://github.com/Azure/azure-cli/blob/dev/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+gitcommit: https://github.com/Azure/azure-cli/blob/5f1a9c621bfc8b15b17f53399e37e43a8c55aa4c/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+updated_at: 3/23/2018 5:57:35 AM
+ms.date: 3/23/2018

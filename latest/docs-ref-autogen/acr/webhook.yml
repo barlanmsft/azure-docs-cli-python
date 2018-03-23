@@ -22,17 +22,17 @@ items:
   langs:
   - azurecli
   examples:
-  - summary: Create a webhook for a container registry that will deliver Docker push and delete events to a service URI.
+  - summary: Create a webhook for a container registry that will deliver docker push and delete events to a service URI.
     syntax:
       content: az acr webhook create -n MyWebhook -r MyRegistry --uri http://myservice.com --actions push delete
-  - summary: Create a webhook for a container registry that will deliver Docker push events to a service URI with a basic authentication header.
+  - summary: Create a webhook for a container registry that will deliver docker push events to a service URI with a basic authentication header.
     syntax:
       content: az acr webhook create -n MyWebhook -r MyRegistry --uri http://myservice.com --actions push --headers "Authorization=Basic 000000"
   parameters:
   - isRequired: true
     name: --actions
     parameterValueGroup: delete, push
-    summary: Space separated list of actions that trigger the webhook to post notifications.
+    summary: Space-separated list of actions that trigger the webhook to post notifications.
     description: ''
   - isRequired: true
     name: --name -n
@@ -47,7 +47,7 @@ items:
     summary: The service URI for the webhook to post notifications.
     description: ''
   - name: --headers
-    summary: Space separated custom headers in 'key[=value]' format that will be added to the webhook notifications. Use "" to clear existing headers.
+    summary: Space-separated custom headers in 'key[=value]' format that will be added to the webhook notifications. Use "" to clear existing headers.
     description: ''
   - name: --location -l
     summary: Location. You can configure the default location using `az configure --defaults location=&lt;location&gt;`.
@@ -64,12 +64,12 @@ items:
     summary: Indicates whether the webhook is enabled.
     description: ''
   - name: --tags
-    summary: Space separated tags in 'key[=value]' format. Use "" to clear existing tags.
+    summary: Space-separated tags in 'key[=value]' format. Use "" to clear existing tags.
     description: ''
   source:
     path: src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_acr_webhook_delete
@@ -97,7 +97,7 @@ items:
   source:
     path: src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_acr_webhook_get_config
@@ -125,7 +125,7 @@ items:
   source:
     path: src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_acr_webhook_list
@@ -149,7 +149,7 @@ items:
   source:
     path: src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_acr_webhook_list_events
@@ -177,7 +177,7 @@ items:
   source:
     path: src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_acr_webhook_ping
@@ -205,7 +205,7 @@ items:
   source:
     path: src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_acr_webhook_show
@@ -233,7 +233,7 @@ items:
   source:
     path: src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_acr_webhook_update
@@ -263,10 +263,10 @@ items:
     description: ''
   - name: --actions
     parameterValueGroup: delete, push
-    summary: Space separated list of actions that trigger the webhook to post notifications.
+    summary: Space-separated list of actions that trigger the webhook to post notifications.
     description: ''
   - name: --headers
-    summary: Space separated custom headers in 'key[=value]' format that will be added to the webhook notifications. Use "" to clear existing headers.
+    summary: Space-separated custom headers in 'key[=value]' format that will be added to the webhook notifications. Use "" to clear existing headers.
     description: ''
   - name: --resource-group -g
     summary: Name of resource group. You can configure the default group using `az configure --defaults group=&lt;name&gt;`.
@@ -279,7 +279,7 @@ items:
     summary: Indicates whether the webhook is enabled.
     description: ''
   - name: --tags
-    summary: Space separated tags in 'key[=value]' format. Use "" to clear existing tags.
+    summary: Space-separated tags in 'key[=value]' format. Use "" to clear existing tags.
     description: ''
   - name: --uri
     summary: The service URI for the webhook to post notifications.
@@ -296,7 +296,7 @@ items:
   source:
     path: src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
       repo: https://github.com/Azure/azure-cli.git
 commands:
@@ -337,9 +337,9 @@ globalParameters:
   summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
 - name: --verbose
   summary: Increase logging verbosity. Use --debug for full debug logs.
-doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
+doc_source_url_repo: https://github.com/Azure/azure-cli/blob/dev/
 doc_source_url_path: src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
-original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/78163f6b27acaf77dc10030271cd0c10fcfa57e5/src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
-updated_at: 1/24/2018 11:42:27 PM
-ms.date: 1/24/2018
+original_content_git_url: https://github.com/Azure/azure-cli/blob/dev/src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
+gitcommit: https://github.com/Azure/azure-cli/blob/5f1a9c621bfc8b15b17f53399e37e43a8c55aa4c/src/command_modules/azure-cli-acr/azure/cli/command_modules/acr/_help.py
+updated_at: 3/23/2018 5:57:35 AM
+ms.date: 3/23/2018

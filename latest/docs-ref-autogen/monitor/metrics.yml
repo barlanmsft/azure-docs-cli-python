@@ -40,10 +40,10 @@ items:
   parameters:
   - name: --aggregation
     parameterValueGroup: Average, Count, Maximum, Minimum, Total
-    summary: The list of aggregation types (space separated) to retrieve.
+    summary: The list of aggregation types (space-separated) to retrieve.
     description: ''
   - name: --dimension
-    summary: The list of dimensions (space separated) the metrics are queried into.
+    summary: The list of dimensions (space-separated) the metrics are queried into.
     description: ''
   - name: --filter
     summary: A string used to reduce the set of metric data returned. eg. "BlobType eq '*'".
@@ -51,8 +51,17 @@ items:
   - name: --metadata
     summary: Returns the metadata values instead of metric data.
     description: ''
-  - name: --metric
-    summary: The name of the metric to retrieve.
+  - name: --metrics
+    summary: Space-separated list of metric names to retrieve.
+    description: ''
+  - name: --namespace
+    summary: Namespace to query metric definitions for.
+    description: ''
+  - name: --orderby
+    summary: 'The aggregation to use for sorting results and the direction of the sort. Only one order can be specified. Examples: sum asc.'
+    description: ''
+  - name: --top
+    summary: The maximum number of records to retrieve. Valid only if $filter is specified. Defaults to 10.
     description: ''
   - isRequired: true
     name: --resource
@@ -82,7 +91,7 @@ items:
   source:
     path: src/command_modules/azure-cli-monitor/azure/cli/command_modules/monitor/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-monitor/azure/cli/command_modules/monitor/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_monitor_metrics_list_definitions
@@ -92,6 +101,9 @@ items:
   langs:
   - azurecli
   parameters:
+  - name: --namespace
+    summary: Namespace to query metric definitions for.
+    description: ''
   - isRequired: true
     name: --resource
     summary: Name or ID of the target resource.
@@ -111,7 +123,7 @@ items:
   source:
     path: src/command_modules/azure-cli-monitor/azure/cli/command_modules/monitor/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-monitor/azure/cli/command_modules/monitor/_help.py
       repo: https://github.com/Azure/azure-cli.git
 commands:
@@ -134,9 +146,9 @@ globalParameters:
   summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
 - name: --verbose
   summary: Increase logging verbosity. Use --debug for full debug logs.
-doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
+doc_source_url_repo: https://github.com/Azure/azure-cli/blob/dev/
 doc_source_url_path: src/command_modules/azure-cli-monitor/azure/cli/command_modules/monitor/_help.py
-original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-monitor/azure/cli/command_modules/monitor/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/00f4c903221240501ae124a99a421b3069116335/src/command_modules/azure-cli-monitor/azure/cli/command_modules/monitor/_help.py
-updated_at: 1/25/2018 12:43:57 AM
-ms.date: 1/25/2018
+original_content_git_url: https://github.com/Azure/azure-cli/blob/dev/src/command_modules/azure-cli-monitor/azure/cli/command_modules/monitor/_help.py
+gitcommit: https://github.com/Azure/azure-cli/blob/5f1a9c621bfc8b15b17f53399e37e43a8c55aa4c/src/command_modules/azure-cli-monitor/azure/cli/command_modules/monitor/_help.py
+updated_at: 3/23/2018 5:57:35 AM
+ms.date: 3/23/2018

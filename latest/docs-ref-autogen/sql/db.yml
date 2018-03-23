@@ -16,6 +16,7 @@ items:
   - az_sql_db_list_deleted
   - az_sql_db_list_editions
   - az_sql_db_list_usages
+  - az_sql_db_rename
   - az_sql_db_restore
   - az_sql_db_show
   - az_sql_db_show_connection_string
@@ -64,7 +65,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_create
@@ -73,6 +74,13 @@ items:
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: Create database with zone redundancy enabled
+    syntax:
+      content: az sql db create -g mygroup -s myserver -n mydb -z
+  - summary: Create database with zone redundancy explicitly disabled
+    syntax:
+      content: az sql db create -g mygroup -s myserver -n mydb -z false
   parameters:
   - isRequired: true
     name: --name -n
@@ -105,15 +113,19 @@ items:
     summary: Indicates the name of the sample schema to apply when creating this database. If createMode is not Default, this value is ignored. Not supported for DataWarehouse edition.
     description: ''
   - name: --service-objective
-    summary: 'The name of the configured service level objective of the database. This is the service level objective that is in the process of being applied to the database. Once successfully updated, it will match the value of serviceLevelObjective property. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: "Capabilities_ListByLocation.".'
+    summary: 'The name of the configured service level objective of the database. This is the service level objective that is in the process of being applied to the database. Once successfully updated, it will match the value of serviceLevelObjective property. To see possible values, query the capabilities API (/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationID}/capabilities) referred to by operationId: "Capabilities_ListByLocation." or use the Azure CLI command `az sql db list-editions --location &lt;location&gt; --query [].supportedServiceLevelObjectives[].name`.'
     description: ''
   - name: --tags
     summary: Resource tags.
     description: ''
+  - name: --zone-redundant -z
+    parameterValueGroup: false, true
+    summary: Specifies whether to enable zone redundancy for the database.
+    description: ''
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_delete
@@ -141,7 +153,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_export
@@ -202,7 +214,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_import
@@ -263,7 +275,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_list
@@ -287,7 +299,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_list_deleted
@@ -308,7 +320,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_list_editions
@@ -345,7 +357,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_list_usages
@@ -370,7 +382,36 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: master
+      branch: dev
+      path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
+      repo: https://github.com/Azure/azure-cli.git
+- uid: az_sql_db_rename
+  name: az sql db rename
+  summary: Rename a database.
+  description: ''
+  langs:
+  - azurecli
+  parameters:
+  - isRequired: true
+    name: --name -n
+    summary: Name of the Azure SQL Database.
+    description: ''
+  - isRequired: true
+    name: --new-name
+    summary: The new name that the database will be renamed to.
+    description: ''
+  - isRequired: true
+    name: --resource-group -g
+    summary: Name of resource group. You can configure the default group using `az configure --defaults group=&lt;name&gt;`.
+    description: ''
+  - isRequired: true
+    name: --server -s
+    summary: Name of the Azure SQL server.
+    description: ''
+  source:
+    path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
+    remote:
+      branch: dev
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_restore
@@ -420,7 +461,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_show
@@ -445,7 +486,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_show_connection_string
@@ -480,7 +521,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_update
@@ -489,6 +530,13 @@ items:
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: Update database with zone redundancy enabled
+    syntax:
+      content: az sql db update -g mygroup -s myserver -n mypool -z
+  - summary: Update database with zone redundancy explicitly disabled
+    syntax:
+      content: az sql db update -g mygroup -s myserver -n mypool -z false
   parameters:
   - isRequired: true
     name: --name -n
@@ -514,6 +562,10 @@ items:
   - name: --service-objective
     summary: The name of the new service objective. If this is a standalone db service objective and the db is currently in an elastic pool, then the db is removed from the pool.
     description: ''
+  - name: --zone-redundant -z
+    parameterValueGroup: false, true
+    summary: Specifies whether to enable zone redundancy for the database.
+    description: ''
   - name: --add
     summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
     description: ''
@@ -526,7 +578,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 commands:
@@ -575,6 +627,9 @@ commands:
 - uid: az_sql_db_op_list
   name: az sql db op list
   summary: Gets a list of operations performed on the database.
+- uid: az_sql_db_rename
+  name: az sql db rename
+  summary: Rename a database.
 - uid: az_sql_db_replica
   name: az sql db replica
   summary: Manage replication between databases.
@@ -636,9 +691,9 @@ globalParameters:
   summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
 - name: --verbose
   summary: Increase logging verbosity. Use --debug for full debug logs.
-doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
+doc_source_url_repo: https://github.com/Azure/azure-cli/blob/dev/
 doc_source_url_path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
-original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/d93f0afa5922deaa8be615de05e3963a37d84dec/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
-updated_at: 1/11/2018 10:49:29 PM
-ms.date: 1/11/2018
+original_content_git_url: https://github.com/Azure/azure-cli/blob/dev/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
+gitcommit: https://github.com/Azure/azure-cli/blob/5f1a9c621bfc8b15b17f53399e37e43a8c55aa4c/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
+updated_at: 3/23/2018 5:57:35 AM
+ms.date: 3/23/2018

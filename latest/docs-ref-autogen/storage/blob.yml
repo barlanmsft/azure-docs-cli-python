@@ -17,6 +17,7 @@ items:
   - az_storage_blob_set_tier
   - az_storage_blob_show
   - az_storage_blob_snapshot
+  - az_storage_blob_undelete
   - az_storage_blob_update
   - az_storage_blob_upload
   - az_storage_blob_upload_batch
@@ -80,7 +81,7 @@ items:
   source:
     path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_storage_blob_delete_batch
@@ -137,7 +138,7 @@ items:
   source:
     path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_storage_blob_download
@@ -215,7 +216,7 @@ items:
   source:
     path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_storage_blob_download_batch
@@ -261,7 +262,7 @@ items:
   source:
     path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_storage_blob_exists
@@ -300,7 +301,7 @@ items:
   source:
     path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_storage_blob_generate_sas
@@ -366,7 +367,7 @@ items:
   source:
     path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_storage_blob_list
@@ -384,7 +385,7 @@ items:
     summary: When the request includes this parameter, the operation returns a BlobPrefix element in the result list that acts as a placeholder for all blobs whose names begin with the same substring up to the appearance of the delimiter character. The delimiter may be a single character or a string.
     description: ''
   - name: --include
-    summary: 'Specifies additional datasets to include: (c)opy-info, (m)etadata, (s)napshots. Can be combined.'
+    summary: 'Specifies additional datasets to include: (c)opy-info, (m)etadata, (s)napshots, (d)eleted-soft. Can be combined.'
     description: ''
   - name: --num-results
     summary: Specifies the maximum number of blobs to return, including all BlobPrefix elements. If the request does not specify num_results or specifies a value greater than 5,000, the server will return up to 5,000 items. Setting num_results to a value less than or equal to zero results in error response code 400 (Bad Request).
@@ -410,7 +411,7 @@ items:
   source:
     path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_storage_blob_set_tier
@@ -455,7 +456,7 @@ items:
   source:
     path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_storage_blob_show
@@ -513,7 +514,7 @@ items:
   source:
     path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_storage_blob_snapshot
@@ -567,7 +568,43 @@ items:
   source:
     path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
     remote:
-      branch: master
+      branch: dev
+      path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
+      repo: https://github.com/Azure/azure-cli.git
+- uid: az_storage_blob_undelete
+  name: az storage blob undelete
+  summary: The undelete Blob operation restores the contents and metadata of soft deleted blob or snapshot.
+  description: Attempting to undelete a blob or snapshot that is not soft deleted will succeed without any changes.
+  langs:
+  - azurecli
+  parameters:
+  - isRequired: true
+    name: --container-name -c
+    summary: The container name.
+    description: ''
+  - isRequired: true
+    name: --name -n
+    summary: The blob name.
+    description: ''
+  - name: --timeout
+    summary: Request timeout in seconds. Applies to each call to the service.
+    description: ''
+  - name: --account-key
+    summary: 'Storage account key. Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_KEY.'
+    description: ''
+  - name: --account-name
+    summary: 'Storage account name. Related environment variable: AZURE_STORAGE_ACCOUNT. Must be used in conjunction with either storage account key or a SAS token. If neither are present, the command will try to query the storage account key using the authenticated Azure account. If a large number of storage commands are executed the API quota may be hit.'
+    description: ''
+  - name: --connection-string
+    summary: 'Storage account connection string. Environment variable: AZURE_STORAGE_CONNECTION_STRING.'
+    description: ''
+  - name: --sas-token
+    summary: 'A Shared Access Signature (SAS). Must be used in conjunction with storage account name. Environment variable: AZURE_STORAGE_SAS_TOKEN.'
+    description: ''
+  source:
+    path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
+    remote:
+      branch: dev
       path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_storage_blob_update
@@ -636,7 +673,7 @@ items:
   source:
     path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_storage_blob_upload
@@ -737,7 +774,7 @@ items:
   source:
     path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_storage_blob_upload_batch
@@ -754,6 +791,9 @@ items:
   - isRequired: true
     name: --source -s
     summary: The directory where the files to be uploaded are located.
+    description: ''
+  - name: --destination-path
+    summary: The destination path that will be appended to the blob name.
     description: ''
   - name: --dryrun
     summary: Show the summary of the operations to be taken instead of actually uploading the file(s).
@@ -832,7 +872,7 @@ items:
   source:
     path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_storage_blob_url
@@ -873,7 +913,7 @@ items:
   source:
     path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
     remote:
-      branch: master
+      branch: dev
       path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
       repo: https://github.com/Azure/azure-cli.git
 commands:
@@ -949,6 +989,15 @@ commands:
 - uid: az_storage_blob_service_properties
   name: az storage blob service-properties
   summary: Manage storage blob service properties.
+- uid: az_storage_blob_service_properties_delete_policy
+  name: az storage blob service-properties delete-policy
+  summary: Manage storage blob delete-policy service properties.
+- uid: az_storage_blob_service_properties_delete_policy_show
+  name: az storage blob service-properties delete-policy show
+  summary: Show the storage blob delete-policy.
+- uid: az_storage_blob_service_properties_delete_policy_update
+  name: az storage blob service-properties delete-policy update
+  summary: Update the storage blob delete-policy.
 - uid: az_storage_blob_service_properties_show
   name: az storage blob service-properties show
   summary: Gets the properties of a storage account's Blob service, including Azure Storage Analytics.
@@ -961,6 +1010,9 @@ commands:
 - uid: az_storage_blob_snapshot
   name: az storage blob snapshot
   summary: Creates a read-only snapshot of a blob.
+- uid: az_storage_blob_undelete
+  name: az storage blob undelete
+  summary: The undelete Blob operation restores the contents and metadata of soft deleted blob or snapshot.
 - uid: az_storage_blob_update
   name: az storage blob update
   summary: Sets system properties on the blob.
@@ -986,9 +1038,9 @@ globalParameters:
   summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
 - name: --verbose
   summary: Increase logging verbosity. Use --debug for full debug logs.
-doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
+doc_source_url_repo: https://github.com/Azure/azure-cli/blob/dev/
 doc_source_url_path: src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
-original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/d93f0afa5922deaa8be615de05e3963a37d84dec/src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
-updated_at: 1/11/2018 10:49:29 PM
-ms.date: 1/11/2018
+original_content_git_url: https://github.com/Azure/azure-cli/blob/dev/src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
+gitcommit: https://github.com/Azure/azure-cli/blob/5f1a9c621bfc8b15b17f53399e37e43a8c55aa4c/src/command_modules/azure-cli-storage/azure/cli/command_modules/storage/_help.py
+updated_at: 3/23/2018 5:57:35 AM
+ms.date: 3/23/2018
