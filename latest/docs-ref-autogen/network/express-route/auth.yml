@@ -3,7 +3,7 @@ items:
 - uid: az_network_express_route_auth
   name: az network express-route auth
   summary: Manage authentication of an ExpressRoute circuit.
-  description: ''
+  description: To learn more about ExpressRoute circuit authentication visit <a href="https://docs.microsoft.com/en-us/azure/expressroute/howto-linkvnet-cli#connect-a-virtual-network-in-a-different-subscription-to-a-circuit">https://docs.microsoft.com/en-us/azure/expressroute/howto-linkvnet-cli#connect-a-virtual-network-in-a-different-subscription-to-a-circuit</a>.
   langs:
   - azurecli
   children:
@@ -13,10 +13,14 @@ items:
   - az_network_express_route_auth_show
 - uid: az_network_express_route_auth_create
   name: az network express-route auth create
-  summary: Create an authorization setting.
+  summary: Create a new link authorization for an ExpressRoute circuit.
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: Create a new link authorization for an ExpressRoute circuit.
+    syntax:
+      content: az network express-route auth create --circuit-name MyCircuit -g MyResourceGroup -n MyAuthorization
   parameters:
   - isRequired: true
     name: --circuit-name
@@ -33,15 +37,19 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_express_route_auth_delete
   name: az network express-route auth delete
-  summary: Delete an authorization setting.
+  summary: Delete a link authorization of an ExpressRoute circuit.
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: Delete a link authorization of an ExpressRoute circuit.
+    syntax:
+      content: az network express-route auth delete --circuit-name MyCircuit -g MyResourceGroup -n MyAuthorization
   parameters:
   - isRequired: true
     name: --circuit-name
@@ -58,15 +66,19 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_express_route_auth_list
   name: az network express-route auth list
-  summary: List authorization settings.
+  summary: List link authorizations of an ExpressRoute circuit.
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: List link authorizations of an ExpressRoute circuit.
+    syntax:
+      content: az network express-route auth list -g MyResourceGroup --circuit-name MyCircuit
   parameters:
   - isRequired: true
     name: --circuit-name
@@ -79,15 +91,19 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_express_route_auth_show
   name: az network express-route auth show
-  summary: Get the details of an authorization setting.
+  summary: Get the details of a link authorization of an ExpressRoute circuit.
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: Get the details of a link authorization of an ExpressRoute circuit.
+    syntax:
+      content: az network express-route auth show -g MyResourceGroup --circuit-name MyCircuit -n MyAuthorization
   parameters:
   - isRequired: true
     name: --circuit-name
@@ -104,22 +120,22 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 commands:
 - uid: az_network_express_route_auth_create
   name: az network express-route auth create
-  summary: Create an authorization setting.
+  summary: Create a new link authorization for an ExpressRoute circuit.
 - uid: az_network_express_route_auth_delete
   name: az network express-route auth delete
-  summary: Delete an authorization setting.
+  summary: Delete a link authorization of an ExpressRoute circuit.
 - uid: az_network_express_route_auth_list
   name: az network express-route auth list
-  summary: List authorization settings.
+  summary: List link authorizations of an ExpressRoute circuit.
 - uid: az_network_express_route_auth_show
   name: az network express-route auth show
-  summary: Get the details of an authorization setting.
+  summary: Get the details of a link authorization of an ExpressRoute circuit.
 globalParameters:
 - name: --debug
   summary: Increase logging verbosity to show all debug logs.
@@ -133,9 +149,9 @@ globalParameters:
   summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
 - name: --verbose
   summary: Increase logging verbosity. Use --debug for full debug logs.
-doc_source_url_repo: https://github.com/Azure/azure-cli/blob/dev/
+doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-original_content_git_url: https://github.com/Azure/azure-cli/blob/dev/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/5f1a9c621bfc8b15b17f53399e37e43a8c55aa4c/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-updated_at: 3/23/2018 5:57:35 AM
-ms.date: 3/23/2018
+original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+gitcommit: https://github.com/Azure/azure-cli/blob/b9e20814dcf82d6d53d2632a2c60b96262c85c89/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+updated_at: 4/5/2018 11:34:01 PM
+ms.date: 4/5/2018

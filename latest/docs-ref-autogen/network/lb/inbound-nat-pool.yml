@@ -2,7 +2,7 @@
 items:
 - uid: az_network_lb_inbound_nat_pool
   name: az network lb inbound-nat-pool
-  summary: Manage inbound NAT address pools for a load balancer.
+  summary: Manage inbound NAT address pools of a load balancer.
   description: ''
   langs:
   - azurecli
@@ -18,6 +18,13 @@ items:
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: Create an inbound NAT address pool.
+    syntax:
+      content: >-
+        az network lb inbound-nat-pool create -g MyResourceGroup --lb-name MyLb \
+                                -n MyNatPool --protocol Tcp --frontend-port-range-start 80 --frontend-port-range-end 89 \
+                                --backend-port 80 --frontend-ip-name MyFrontendIp
   parameters:
   - isRequired: true
     name: --backend-port
@@ -42,7 +49,7 @@ items:
   - isRequired: true
     name: --protocol
     parameterValueGroup: All, Tcp, Udp
-    summary: ''
+    summary: Network transport protocol.
     description: ''
   - isRequired: true
     name: --resource-group -g
@@ -54,7 +61,7 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_lb_inbound_nat_pool_delete
@@ -63,6 +70,10 @@ items:
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: Delete an inbound NAT address pool.
+    syntax:
+      content: az network lb inbound-nat-pool delete -g MyResourceGroup --lb-name MyLb -n MyNatPool
   parameters:
   - isRequired: true
     name: --lb-name
@@ -79,7 +90,7 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_lb_inbound_nat_pool_list
@@ -88,6 +99,10 @@ items:
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: List inbound NAT address pools.
+    syntax:
+      content: az network lb inbound-nat-pool list -g MyResourceGroup --lb-name MyLb -o table
   parameters:
   - isRequired: true
     name: --lb-name
@@ -100,15 +115,19 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_lb_inbound_nat_pool_show
   name: az network lb inbound-nat-pool show
-  summary: Get the details for an inbound NAT address pool.
+  summary: Get the details of an inbound NAT address pool.
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: Get the details of an inbound NAT address pool.
+    syntax:
+      content: az network lb inbound-nat-pool show -g MyResourceGroup --lb-name MyLb -n MyNatPool
   parameters:
   - isRequired: true
     name: --lb-name
@@ -125,7 +144,7 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_lb_inbound_nat_pool_update
@@ -134,6 +153,12 @@ items:
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: Update an inbound NAT address pool to a different backend port.
+    syntax:
+      content: >-
+        az network lb inbound-nat-pool update -g MyResourceGroup --lb-name MyLb -n MyNatPool \
+                                    --protocol Tcp --backend-port 8080
   parameters:
   - isRequired: true
     name: --lb-name
@@ -161,7 +186,7 @@ items:
     description: ''
   - name: --protocol
     parameterValueGroup: All, Tcp, Udp
-    summary: ''
+    summary: Network transport protocol.
     description: ''
   - name: --add
     summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
@@ -175,7 +200,7 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 commands:
@@ -190,7 +215,7 @@ commands:
   summary: List inbound NAT address pools.
 - uid: az_network_lb_inbound_nat_pool_show
   name: az network lb inbound-nat-pool show
-  summary: Get the details for an inbound NAT address pool.
+  summary: Get the details of an inbound NAT address pool.
 - uid: az_network_lb_inbound_nat_pool_update
   name: az network lb inbound-nat-pool update
   summary: Update an inbound NAT address pool.
@@ -207,9 +232,9 @@ globalParameters:
   summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
 - name: --verbose
   summary: Increase logging verbosity. Use --debug for full debug logs.
-doc_source_url_repo: https://github.com/Azure/azure-cli/blob/dev/
+doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-original_content_git_url: https://github.com/Azure/azure-cli/blob/dev/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/5f1a9c621bfc8b15b17f53399e37e43a8c55aa4c/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-updated_at: 3/23/2018 5:57:35 AM
-ms.date: 3/23/2018
+original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+gitcommit: https://github.com/Azure/azure-cli/blob/b9e20814dcf82d6d53d2632a2c60b96262c85c89/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+updated_at: 4/5/2018 11:34:01 PM
+ms.date: 4/5/2018

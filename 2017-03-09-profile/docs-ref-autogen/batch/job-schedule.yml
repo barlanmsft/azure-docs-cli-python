@@ -42,8 +42,8 @@ items:
     summary: A list of name-value pairs associated with the schedule as metadata. The Batch service does not assign any meaning to metadata; it is solely for the use of user code. Space-separated values in 'key=value' format.
     description: ''
   - name: --on-all-tasks-complete
-    parameterValueGroup: noAction, terminateJob
-    summary: The action the Batch service should take when all tasks in a job created under this schedule are in the completed state. Note that if a job contains no tasks, then all tasks are considered complete. This option is therefore most commonly used with a Job Manager task; if you want to use automatic job termination without a Job Manager, you should initially set onAllTasksComplete to noAction and update the job properties to set onAllTasksComplete to terminateJob once you have finished adding tasks. The default is noAction.
+    parameterValueGroup: noaction, terminatejob
+    summary: The action the Batch service should take when all tasks in a job created under this schedule are in the completed state. Note that if a job contains no tasks, then all tasks are considered complete. This option is therefore most commonly used with a Job Manager task; if you want to use automatic job termination without a Job Manager, you should initially set onAllTasksComplete to noaction and update the job properties to set onAllTasksComplete to terminatejob once you have finished adding tasks. The default is noaction.
     description: ''
   - name: --priority
     summary: The priority of jobs created under this schedule. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0. This priority is used as the default for all jobs under the job schedule. You can update a job's priority after it has been created using by using the update job API.
@@ -84,7 +84,7 @@ items:
   source:
     path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_batch_job_schedule_delete
@@ -125,7 +125,7 @@ items:
   source:
     path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_batch_job_schedule_disable
@@ -163,7 +163,7 @@ items:
   source:
     path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_batch_job_schedule_enable
@@ -201,7 +201,7 @@ items:
   source:
     path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_batch_job_schedule_list
@@ -224,7 +224,7 @@ items:
     summary: An OData $expand clause.
     description: ''
   - name: --filter
-    summary: An OData $filter clause.
+    summary: An OData $filter clause. For more information on constructing this filter, see <a href="https://docs.microsoft.com/en-us/rest/api/batchservice/odata-filters-in-batch#list-job-schedules">https://docs.microsoft.com/en-us/rest/api/batchservice/odata-filters-in-batch#list-job-schedules</a>.
     description: ''
   - name: --select
     summary: An OData $select clause.
@@ -232,7 +232,7 @@ items:
   source:
     path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_batch_job_schedule_reset
@@ -265,8 +265,8 @@ items:
     summary: A list of name-value pairs associated with each job created under this schedule as metadata. The Batch service does not assign any meaning to metadata; it is solely for the use of user code. Space-separated values in 'key=value' format.
     description: ''
   - name: --on-all-tasks-complete
-    parameterValueGroup: noAction, terminateJob
-    summary: The action the Batch service should take when all tasks in a job created under this schedule are in the completed state. Note that if a job contains no tasks, then all tasks are considered complete. This option is therefore most commonly used with a Job Manager task; if you want to use automatic job termination without a Job Manager, you should initially set onAllTasksComplete to noAction and update the job properties to set onAllTasksComplete to terminateJob once you have finished adding tasks. The default is noAction.
+    parameterValueGroup: noaction, terminatejob
+    summary: The action the Batch service should take when all tasks in a job created under this schedule are in the completed state. Note that if a job contains no tasks, then all tasks are considered complete. This option is therefore most commonly used with a Job Manager task; if you want to use automatic job termination without a Job Manager, you should initially set onAllTasksComplete to noaction and update the job properties to set onAllTasksComplete to terminatejob once you have finished adding tasks. The default is noaction.
     description: ''
   - name: --priority
     summary: The priority of jobs created under this schedule. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0. This priority is used as the default for all jobs under the job schedule. You can update a job's priority after it has been created using by using the update job API.
@@ -319,7 +319,7 @@ items:
   source:
     path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_batch_job_schedule_set
@@ -352,8 +352,8 @@ items:
     summary: A list of name-value pairs associated with each job created under this schedule as metadata. The Batch service does not assign any meaning to metadata; it is solely for the use of user code. Space-separated values in 'key=value' format.
     description: ''
   - name: --on-all-tasks-complete
-    parameterValueGroup: noAction, terminateJob
-    summary: The action the Batch service should take when all tasks in a job created under this schedule are in the completed state. Note that if a job contains no tasks, then all tasks are considered complete. This option is therefore most commonly used with a Job Manager task; if you want to use automatic job termination without a Job Manager, you should initially set onAllTasksComplete to noAction and update the job properties to set onAllTasksComplete to terminateJob once you have finished adding tasks. The default is noAction.
+    parameterValueGroup: noaction, terminatejob
+    summary: The action the Batch service should take when all tasks in a job created under this schedule are in the completed state. Note that if a job contains no tasks, then all tasks are considered complete. This option is therefore most commonly used with a Job Manager task; if you want to use automatic job termination without a Job Manager, you should initially set onAllTasksComplete to noaction and update the job properties to set onAllTasksComplete to terminatejob once you have finished adding tasks. The default is noaction.
     description: ''
   - name: --priority
     summary: The priority of jobs created under this schedule. Priority values can range from -1000 to 1000, with -1000 being the lowest priority and 1000 being the highest priority. The default value is 0. This priority is used as the default for all jobs under the job schedule. You can update a job's priority after it has been created using by using the update job API.
@@ -406,7 +406,7 @@ items:
   source:
     path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_batch_job_schedule_show
@@ -450,7 +450,7 @@ items:
   source:
     path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_batch_job_schedule_stop
@@ -488,7 +488,7 @@ items:
   source:
     path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
       repo: https://github.com/Azure/azure-cli.git
 commands:
@@ -532,9 +532,9 @@ globalParameters:
   summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
 - name: --verbose
   summary: Increase logging verbosity. Use --debug for full debug logs.
-doc_source_url_repo: https://github.com/Azure/azure-cli/blob/dev/
+doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
-original_content_git_url: https://github.com/Azure/azure-cli/blob/dev/src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/5f1a9c621bfc8b15b17f53399e37e43a8c55aa4c/src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
-updated_at: 3/23/2018 5:57:35 AM
-ms.date: 3/23/2018
+original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
+gitcommit: https://github.com/Azure/azure-cli/blob/8346147d0da04063bd9000d1b370b2d65204cda8/src/command_modules/azure-cli-batch/azure/cli/command_modules/batch/_help.py
+updated_at: 11/13/2017 7:42:14 PM
+ms.date: 11/13/2017

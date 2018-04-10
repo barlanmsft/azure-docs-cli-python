@@ -21,25 +21,41 @@ items:
   examples:
   - summary: Create a new event subscription for an Event Grid topic, using default filters.
     syntax:
-      content: az eventgrid event-subscription create -g rg1 --topic-name topic1 --name es1     --endpoint https://contoso.azurewebsites.net/api/f1?code=code
+      content: >-
+        az eventgrid event-subscription create -g rg1 --topic-name topic1 --name es1 \
+                                    --endpoint https://contoso.azurewebsites.net/api/f1?code=code
   - summary: Create a new event subscription for a subscription, using default filters.
     syntax:
-      content: az eventgrid event-subscription create --name es2     --endpoint https://contoso.azurewebsites.net/api/f1?code=code
+      content: >-
+        az eventgrid event-subscription create --name es2 \
+                                    --endpoint https://contoso.azurewebsites.net/api/f1?code=code
   - summary: Create a new event subscription for a resource group, using default filters.
     syntax:
-      content: az eventgrid event-subscription create -g rg1 --name es3     --endpoint https://contoso.azurewebsites.net/api/f1?code=code
+      content: >-
+        az eventgrid event-subscription create -g rg1 --name es3 \
+                                    --endpoint https://contoso.azurewebsites.net/api/f1?code=code
   - summary: Create a new event subscription for a storage account, using default filters.
     syntax:
-      content: az eventgrid event-subscription create --resource-id "/subscriptions/55f3dcd4-cac7-43b4-990b-a139d62a1eb2/resourceGroups/kalstest/providers/Microsoft.Storage/storageaccounts/kalsegblob" --name es3     --endpoint https://contoso.azurewebsites.net/api/f1?code=code
+      content: >-
+        az eventgrid event-subscription create --resource-id "/subscriptions/55f3dcd4-cac7-43b4-990b-a139d62a1eb2/resourceGroups/kalstest/providers/Microsoft.Storage/storageaccounts/kalsegblob" --name es3 \
+                                    --endpoint https://contoso.azurewebsites.net/api/f1?code=code
   - summary: Create a new event subscription for a subscription, with a filter specifying a subject prefix.
     syntax:
-      content: az eventgrid event-subscription create --name es4     --endpoint https://contoso.azurewebsites.net/api/f1?code=code     --subject-begins-with mysubject_prefix
+      content: >-
+        az eventgrid event-subscription create --name es4 \
+                                    --endpoint https://contoso.azurewebsites.net/api/f1?code=code \
+                                    --subject-begins-with mysubject_prefix
   - summary: Create a new event subscription for a resource group, with a filter specifying a subject suffix.
     syntax:
-      content: az eventgrid event-subscription create -g rg2 --name es5     --endpoint https://contoso.azurewebsites.net/api/f1?code=code     --subject-ends-with mysubject_suffix
+      content: >-
+        az eventgrid event-subscription create -g rg2 --name es5 \
+                                    --endpoint https://contoso.azurewebsites.net/api/f1?code=code \
+                                    --subject-ends-with mysubject_suffix
   - summary: Create a new event subscription for a subscription, using default filters, and an EventHub as a destination.
     syntax:
-      content: az eventgrid event-subscription create --name es2 --endpoint-type eventhub     --endpoint /subscriptions/55f3dcd4-cac7-43b4-990b-a139d62a1eb2/resourceGroups/TestRG/providers/Microsoft.EventHub/namespaces/ContosoNamespace/eventhubs/EH1
+      content: >-
+        az eventgrid event-subscription create --name es2 --endpoint-type eventhub \
+                                    --endpoint /subscriptions/55f3dcd4-cac7-43b4-990b-a139d62a1eb2/resourceGroups/TestRG/providers/Microsoft.EventHub/namespaces/ContosoNamespace/eventhubs/EH1
   parameters:
   - isRequired: true
     name: --endpoint
@@ -82,7 +98,7 @@ items:
   source:
     path: src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_eventgrid_event_subscription_delete
@@ -121,7 +137,7 @@ items:
   source:
     path: src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_eventgrid_event_subscription_list
@@ -174,7 +190,7 @@ items:
   source:
     path: src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_eventgrid_event_subscription_show
@@ -217,7 +233,7 @@ items:
   source:
     path: src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_eventgrid_event_subscription_update
@@ -229,16 +245,22 @@ items:
   examples:
   - summary: Update an event subscription for an Event Grid topic to specify a new endpoint.
     syntax:
-      content: az eventgrid event-subscription update -g rg1 --topic-name topic1 --name es1     --endpoint https://contoso.azurewebsites.net/api/f1?code=code
+      content: >-
+        az eventgrid event-subscription update -g rg1 --topic-name topic1 --name es1 \
+                                    --endpoint https://contoso.azurewebsites.net/api/f1?code=code
   - summary: Update an event subscription for a subscription to specify a new subject-ends-with filter.
     syntax:
       content: az eventgrid event-subscription update --name es2 --subject-ends-with .jpg
   - summary: Update an event subscription for a resource group to specify a new endpoint and a new subject-ends-with filter.
     syntax:
-      content: az eventgrid event-subscription update -g rg1 --name es3  --subject-ends-with .png     --endpoint https://contoso.azurewebsites.net/api/f1?code=code
+      content: >-
+        az eventgrid event-subscription update -g rg1 --name es3  --subject-ends-with .png \
+                                    --endpoint https://contoso.azurewebsites.net/api/f1?code=code
   - summary: Update an event subscription for a storage account to specify a new list of included event types.
     syntax:
-      content: az eventgrid event-subscription update --resource-id "/subscriptions/55f3dcd4-cac7-43b4-990b-a139d62a1eb2/resourceGroups/kalstest/providers/microsoft.storage/storageaccounts/kalsegblob" --name es3     --included-event-types Microsoft.Storage.BlobCreated Microsoft.Storage.BlobDeleted
+      content: >-
+        az eventgrid event-subscription update --resource-id "/subscriptions/55f3dcd4-cac7-43b4-990b-a139d62a1eb2/resourceGroups/kalstest/providers/microsoft.storage/storageaccounts/kalsegblob" --name es3 \
+                                    --included-event-types Microsoft.Storage.BlobCreated Microsoft.Storage.BlobDeleted
   parameters:
   - isRequired: true
     name: --name -n
@@ -285,7 +307,7 @@ items:
   source:
     path: src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
       repo: https://github.com/Azure/azure-cli.git
 commands:
@@ -317,9 +339,9 @@ globalParameters:
   summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
 - name: --verbose
   summary: Increase logging verbosity. Use --debug for full debug logs.
-doc_source_url_repo: https://github.com/Azure/azure-cli/blob/dev/
+doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
-original_content_git_url: https://github.com/Azure/azure-cli/blob/dev/src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/5f1a9c621bfc8b15b17f53399e37e43a8c55aa4c/src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
-updated_at: 3/23/2018 5:57:35 AM
-ms.date: 3/23/2018
+original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
+gitcommit: https://github.com/Azure/azure-cli/blob/b6c8ccd59b08eaee725fd19ec0decf030b1e57fc/src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
+updated_at: 1/4/2018 11:13:54 PM
+ms.date: 1/4/2018

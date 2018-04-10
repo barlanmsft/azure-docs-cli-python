@@ -23,7 +23,9 @@ items:
       content: az vm extension delete -g MyResourceGroup --vm-name MyVm -n extension_name
   - summary: Delete extensions with IDs containing the string "MyExtension" from a VM.
     syntax:
-      content: az vm extension delete --ids     $(az resource list --query "[?contains(name, 'MyExtension')].id" -o tsv)
+      content: >-
+        az vm extension delete --ids \
+                                    $(az resource list --query "[?contains(name, 'MyExtension')].id" -o tsv)
   parameters:
   - isRequired: true
     name: --name -n
@@ -40,7 +42,7 @@ items:
   source:
     path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_vm_extension_list
@@ -55,7 +57,9 @@ items:
       content: az vm extension list -g MyResourceGroup --vm-name MyVm
   - summary: List attached extensions with IDs containing the string "MyExtension".
     syntax:
-      content: az vm extension list --ids     $(az resource list --query "[?contains(name, 'MyExtension')].id" -o tsv)
+      content: >-
+        az vm extension list --ids \
+                                    $(az resource list --query "[?contains(name, 'MyExtension')].id" -o tsv)
   parameters:
   - isRequired: true
     name: --resource-group -g
@@ -68,7 +72,7 @@ items:
   source:
     path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_vm_extension_set
@@ -80,7 +84,10 @@ items:
   examples:
   - summary: Add a user account to a Linux VM.
     syntax:
-      content: az vm extension set -n VMAccessForLinux --publisher Microsoft.OSTCExtensions --version 1.4     --vm-name MyVm --resource-group MyResourceGroup     --protected-settings '{"username":"user1", "ssh_key":"ssh_rsa ..."}'
+      content: >-
+        az vm extension set -n VMAccessForLinux --publisher Microsoft.OSTCExtensions --version 1.4 \
+                                    --vm-name MyVm --resource-group MyResourceGroup \
+                                    --protected-settings '{"username":"user1", "ssh_key":"ssh_rsa ..."}'
   parameters:
   - isRequired: true
     name: --name -n
@@ -113,7 +120,7 @@ items:
   source:
     path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_vm_extension_show
@@ -145,7 +152,7 @@ items:
   source:
     path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
       repo: https://github.com/Azure/azure-cli.git
 commands:
@@ -189,9 +196,9 @@ globalParameters:
   summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
 - name: --verbose
   summary: Increase logging verbosity. Use --debug for full debug logs.
-doc_source_url_repo: https://github.com/Azure/azure-cli/blob/dev/
+doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
-original_content_git_url: https://github.com/Azure/azure-cli/blob/dev/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/5f1a9c621bfc8b15b17f53399e37e43a8c55aa4c/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
-updated_at: 3/23/2018 5:57:35 AM
-ms.date: 3/23/2018
+original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+gitcommit: https://github.com/Azure/azure-cli/blob/48a0c83d7404436e75ff65210a2e66f8444e027d/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+updated_at: 4/5/2018 3:48:36 PM
+ms.date: 4/5/2018

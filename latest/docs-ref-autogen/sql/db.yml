@@ -65,7 +65,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_create
@@ -125,7 +125,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_delete
@@ -153,7 +153,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_export
@@ -165,13 +165,22 @@ items:
   examples:
   - summary: Get an SAS key for use in export operation.
     syntax:
-      content: az storage blob generate-sas --account-name myAccountName -c myContainer -n myBacpac.bacpac     --permissions w --expiry 2018-01-01T00:00:00Z
+      content: >-
+        az storage blob generate-sas --account-name myAccountName -c myContainer -n myBacpac.bacpac \
+                                    --permissions w --expiry 2018-01-01T00:00:00Z
   - summary: Export bacpac using an SAS key.
     syntax:
-      content: az sql db export -s myserver -n mydatabase -g mygroup -p password -u login     --storage-key "?sr=b&sp=rw&se=2018-01-01T00%3A00%3A00Z&sig=mysignature&sv=2015-07-08"     --storage-key-type SharedAccessKey     --storage-uri https://mystorageaccount.blob.core.windows.net/bacpacs/mybacpac.bacpac
+      content: >-
+        az sql db export -s myserver -n mydatabase -g mygroup -p password -u login \
+                                    --storage-key "?sr=b&sp=rw&se=2018-01-01T00%3A00%3A00Z&sig=mysignature&sv=2015-07-08" \
+                                    --storage-key-type SharedAccessKey \
+                                    --storage-uri https://mystorageaccount.blob.core.windows.net/bacpacs/mybacpac.bacpac
   - summary: Export bacpac using a storage account key.
     syntax:
-      content: az sql db export -s myserver -n mydatabase -g mygroup -p password -u login     --storage-key MYKEY== --storage-key-type StorageAccessKey     --storage-uri https://mystorageaccount.blob.core.windows.net/bacpacs/mybacpac.bacpac
+      content: >-
+        az sql db export -s myserver -n mydatabase -g mygroup -p password -u login \
+                                    --storage-key MYKEY== --storage-key-type StorageAccessKey \
+                                    --storage-uri https://mystorageaccount.blob.core.windows.net/bacpacs/mybacpac.bacpac
   parameters:
   - isRequired: true
     name: --admin-password -p
@@ -214,7 +223,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_import
@@ -226,13 +235,22 @@ items:
   examples:
   - summary: Get an SAS key for use in import operation.
     syntax:
-      content: az storage blob generate-sas --account-name myAccountName -c myContainer -n myBacpac.bacpac     --permissions r --expiry 2018-01-01T00:00:00Z
+      content: >-
+        az storage blob generate-sas --account-name myAccountName -c myContainer -n myBacpac.bacpac \
+                                    --permissions r --expiry 2018-01-01T00:00:00Z
   - summary: Import bacpac into an existing database using an SAS key.
     syntax:
-      content: az sql db import -s myserver -n mydatabase -g mygroup -p password -u login     --storage-key "?sr=b&sp=rw&se=2018-01-01T00%3A00%3A00Z&sig=mysignature&sv=2015-07-08"     --storage-key-type SharedAccessKey     --storage-uri https://mystorageaccount.blob.core.windows.net/bacpacs/mybacpac.bacpac
+      content: >-
+        az sql db import -s myserver -n mydatabase -g mygroup -p password -u login \
+                                    --storage-key "?sr=b&sp=rw&se=2018-01-01T00%3A00%3A00Z&sig=mysignature&sv=2015-07-08" \
+                                    --storage-key-type SharedAccessKey \
+                                    --storage-uri https://mystorageaccount.blob.core.windows.net/bacpacs/mybacpac.bacpac
   - summary: Import bacpac into an existing database using a storage account key.
     syntax:
-      content: az sql db import -s myserver -n mydatabase -g mygroup -p password -u login --storage-key MYKEY==     --storage-key-type StorageAccessKey     --storage-uri https://mystorageaccount.blob.core.windows.net/bacpacs/mybacpac.bacpac
+      content: >-
+        az sql db import -s myserver -n mydatabase -g mygroup -p password -u login --storage-key MYKEY== \
+                                    --storage-key-type StorageAccessKey \
+                                    --storage-uri https://mystorageaccount.blob.core.windows.net/bacpacs/mybacpac.bacpac
   parameters:
   - isRequired: true
     name: --admin-password -p
@@ -275,7 +293,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_list
@@ -299,7 +317,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_list_deleted
@@ -320,7 +338,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_list_editions
@@ -357,7 +375,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_list_usages
@@ -382,7 +400,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_rename
@@ -411,7 +429,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_restore
@@ -461,7 +479,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_show
@@ -486,7 +504,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_show_connection_string
@@ -521,7 +539,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_update
@@ -578,7 +596,7 @@ items:
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
       repo: https://github.com/Azure/azure-cli.git
 commands:
@@ -691,9 +709,9 @@ globalParameters:
   summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
 - name: --verbose
   summary: Increase logging verbosity. Use --debug for full debug logs.
-doc_source_url_repo: https://github.com/Azure/azure-cli/blob/dev/
+doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
-original_content_git_url: https://github.com/Azure/azure-cli/blob/dev/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/5f1a9c621bfc8b15b17f53399e37e43a8c55aa4c/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
-updated_at: 3/23/2018 5:57:35 AM
-ms.date: 3/23/2018
+original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
+gitcommit: https://github.com/Azure/azure-cli/blob/6729d6d544b93b1f7ba6979a88b566b59d0b9392/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
+updated_at: 4/4/2018 11:05:48 PM
+ms.date: 4/4/2018

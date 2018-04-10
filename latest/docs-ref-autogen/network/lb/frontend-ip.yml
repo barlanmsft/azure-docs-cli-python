@@ -2,7 +2,7 @@
 items:
 - uid: az_network_lb_frontend_ip
   name: az network lb frontend-ip
-  summary: Manage frontend IP addresses for a load balancer.
+  summary: Manage frontend IP addresses of a load balancer.
   description: ''
   langs:
   - azurecli
@@ -18,6 +18,15 @@ items:
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: Create a frontend ip address for a public load balancer.
+    syntax:
+      content: az network lb frontend-ip create -g MyResourceGroup -n MyFrontendIp --lb-name MyLb --public-ip-name MyFrontendIp
+  - summary: Create a frontend ip address for an internal load balancer.
+    syntax:
+      content: >-
+        az network lb frontend-ip create -g MyResourceGroup -n MyFrontendIp --lb-name MyLb \
+                                    --private-ip-address 10.10.10.100 --subnet-name MySubnet --subnet-vnet-name MyVnet
   parameters:
   - isRequired: true
     name: --lb-name
@@ -50,7 +59,7 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_lb_frontend_ip_delete
@@ -59,6 +68,10 @@ items:
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: Delete a frontend IP address.
+    syntax:
+      content: az network lb frontend-ip delete -g MyResourceGroup --lb-name MyLb -n MyFrontendIp
   parameters:
   - isRequired: true
     name: --lb-name
@@ -75,7 +88,7 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_lb_frontend_ip_list
@@ -84,6 +97,10 @@ items:
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: List frontend IP addresses.
+    syntax:
+      content: az network lb frontend-ip list -g MyResourceGroup --lb-name MyLb
   parameters:
   - isRequired: true
     name: --lb-name
@@ -96,7 +113,7 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_lb_frontend_ip_show
@@ -105,6 +122,10 @@ items:
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: Get the details of a frontend IP address.
+    syntax:
+      content: az network lb frontend-ip show -g MyResourceGroup --lb-name MyLb -n MyFrontendIp
   parameters:
   - isRequired: true
     name: --lb-name
@@ -121,7 +142,7 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_lb_frontend_ip_update
@@ -130,6 +151,13 @@ items:
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: Update the frontend IP address of a public load balancer.
+    syntax:
+      content: az network lb frontend-ip update -g MyResourceGroup --lb-name MyLb -n MyFrontendIp --public-ip-name MyNewPublicIp
+  - summary: Update the frontend IP address of an internal load balancer.
+    syntax:
+      content: az network lb frontend-ip update -g MyResourceGroup --lb-name MyLb -n MyFrontendIp --private-ip-address 10.10.10.50
   parameters:
   - isRequired: true
     name: --lb-name
@@ -167,7 +195,7 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 commands:
@@ -199,9 +227,9 @@ globalParameters:
   summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
 - name: --verbose
   summary: Increase logging verbosity. Use --debug for full debug logs.
-doc_source_url_repo: https://github.com/Azure/azure-cli/blob/dev/
+doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-original_content_git_url: https://github.com/Azure/azure-cli/blob/dev/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/5f1a9c621bfc8b15b17f53399e37e43a8c55aa4c/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-updated_at: 3/23/2018 5:57:35 AM
-ms.date: 3/23/2018
+original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+gitcommit: https://github.com/Azure/azure-cli/blob/b9e20814dcf82d6d53d2632a2c60b96262c85c89/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+updated_at: 4/5/2018 11:34:01 PM
+ms.date: 4/5/2018

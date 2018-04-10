@@ -52,7 +52,7 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_dns_zone_delete
@@ -61,6 +61,10 @@ items:
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: Delete a DNS zone using a fully qualified domain name.
+    syntax:
+      content: az network dns zone delete -g MyResourceGroup -n www.mysite.com
   parameters:
   - isRequired: true
     name: --name -n
@@ -79,7 +83,7 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_dns_zone_export
@@ -88,6 +92,10 @@ items:
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: Export a DNS zone as a DNS zone file in tsv format.
+    syntax:
+      content: az network dns zone export -g MyResourceGroup -n www.mysite.com -o mysite_com_zone.tsv
   parameters:
   - isRequired: true
     name: --name -n
@@ -103,7 +111,7 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_dns_zone_import
@@ -132,7 +140,7 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_dns_zone_list
@@ -141,6 +149,10 @@ items:
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: List DNS zones in a resource group.
+    syntax:
+      content: az network dns zone list -g MyResourceGroup
   parameters:
   - name: --resource-group -g
     summary: Name of resource group. You can configure the default group using `az configure --defaults group=&lt;name&gt;`.
@@ -148,15 +160,19 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_dns_zone_show
   name: az network dns zone show
-  summary: Get a DNS zone's parameters. Does not show DNS records within the zone.
+  summary: Get a DNS zone parameters. Does not show DNS records within the zone.
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: List DNS zones in a resource group.
+    syntax:
+      content: az network dns zone show -g MyResourceGroup -n www.mysite.com
   parameters:
   - isRequired: true
     name: --name -n
@@ -169,15 +185,19 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_dns_zone_update
   name: az network dns zone update
-  summary: Update a DNS zone's properties. Does not modify DNS records within the zone.
+  summary: Update a DNS zone properties. Does not modify DNS records within the zone.
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: Update a DNS zone properties to change the user-defined value of a previously set tag.
+    syntax:
+      content: az network dns zone update -g MyResourceGroup -n www.mysite.com --tags CostCenter=Marketing
   parameters:
   - isRequired: true
     name: --name -n
@@ -214,7 +234,7 @@ items:
   source:
     path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
     remote:
-      branch: dev
+      branch: master
       path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
       repo: https://github.com/Azure/azure-cli.git
 commands:
@@ -235,10 +255,10 @@ commands:
   summary: List DNS zones.
 - uid: az_network_dns_zone_show
   name: az network dns zone show
-  summary: Get a DNS zone's parameters. Does not show DNS records within the zone.
+  summary: Get a DNS zone parameters. Does not show DNS records within the zone.
 - uid: az_network_dns_zone_update
   name: az network dns zone update
-  summary: Update a DNS zone's properties. Does not modify DNS records within the zone.
+  summary: Update a DNS zone properties. Does not modify DNS records within the zone.
 globalParameters:
 - name: --debug
   summary: Increase logging verbosity to show all debug logs.
@@ -252,9 +272,9 @@ globalParameters:
   summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
 - name: --verbose
   summary: Increase logging verbosity. Use --debug for full debug logs.
-doc_source_url_repo: https://github.com/Azure/azure-cli/blob/dev/
+doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-original_content_git_url: https://github.com/Azure/azure-cli/blob/dev/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/5f1a9c621bfc8b15b17f53399e37e43a8c55aa4c/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-updated_at: 3/23/2018 5:57:35 AM
-ms.date: 3/23/2018
+original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+gitcommit: https://github.com/Azure/azure-cli/blob/b9e20814dcf82d6d53d2632a2c60b96262c85c89/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+updated_at: 4/5/2018 11:34:01 PM
+ms.date: 4/5/2018

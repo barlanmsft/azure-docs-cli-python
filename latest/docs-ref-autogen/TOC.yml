@@ -624,6 +624,13 @@
         - name: Enable
           uid: az_batch_node_scheduling_enable
           displayName: az batch node scheduling enable
+      - name: Service-Logs
+        uid: az_batch_node_service_logs
+        displayName: az batch node service-logs
+        items:
+        - name: Upload
+          uid: az_batch_node_service_logs_upload
+          displayName: az batch node service-logs upload
       - name: Users
         uid: az_batch_node_user
         displayName: az batch node user
@@ -682,6 +689,13 @@
         - name: List
           uid: az_batch_pool_node_agent_skus_list
           displayName: az batch pool node-agent-skus list
+      - name: Node-Counts
+        uid: az_batch_pool_node_counts
+        displayName: az batch pool node-counts
+        items:
+        - name: List
+          uid: az_batch_pool_node_counts_list
+          displayName: az batch pool node-counts list
       - name: Operating Systems
         uid: az_batch_pool_os
         displayName: az batch pool os
@@ -755,6 +769,9 @@
     uid: az_batchai
     displayName: az batchai
     items:
+    - name: List-Usages
+      uid: az_batchai_list_usages
+      displayName: az batchai list-usages
     - name: Cluster
       uid: az_batchai_cluster
       displayName: az batchai cluster
@@ -771,6 +788,9 @@
       - name: List
         uid: az_batchai_cluster_list
         displayName: az batchai cluster list
+      - name: List-Files
+        uid: az_batchai_cluster_list_files
+        displayName: az batchai cluster list-files
       - name: List-Nodes
         uid: az_batchai_cluster_list_nodes
         displayName: az batchai cluster list-nodes
@@ -809,25 +829,42 @@
       - name: List
         uid: az_batchai_job_list
         displayName: az batchai job list
-      - name: List-Files
-        uid: az_batchai_job_list_files
-        displayName: az batchai job list-files
       - name: List-Nodes
         uid: az_batchai_job_list_nodes
         displayName: az batchai job list-nodes
       - name: Show
         uid: az_batchai_job_show
         displayName: az batchai job show
-      - name: Stream-File
-        uid: az_batchai_job_stream_file
-        displayName: az batchai job stream-file
       - name: Terminate
         uid: az_batchai_job_terminate
         displayName: az batchai job terminate
+      - name: Wait
+        uid: az_batchai_job_wait
+        displayName: az batchai job wait
+      - name: File
+        uid: az_batchai_job_file
+        displayName: az batchai job file
+        items:
+        - name: List
+          uid: az_batchai_job_file_list
+          displayName: az batchai job file list
+        - name: Stream
+          uid: az_batchai_job_file_stream
+          displayName: az batchai job file stream
   - name: Billing
     uid: az_billing
     displayName: az billing
     items:
+    - name: Enrollment-Account
+      uid: az_billing_enrollment_account
+      displayName: az billing enrollment-account
+      items:
+      - name: List
+        uid: az_billing_enrollment_account_list
+        displayName: az billing enrollment-account list
+      - name: Show
+        uid: az_billing_enrollment_account_show
+        displayName: az billing enrollment-account show
     - name: Invoice
       uid: az_billing_invoice
       displayName: az billing invoice
@@ -1018,6 +1055,13 @@
     uid: az_consumption
     displayName: az consumption
     items:
+    - name: Marketplace
+      uid: az_consumption_marketplace
+      displayName: az consumption marketplace
+      items:
+      - name: List
+        uid: az_consumption_marketplace_list
+        displayName: az consumption marketplace list
     - name: Pricesheet
       uid: az_consumption_pricesheet
       displayName: az consumption pricesheet
@@ -1025,24 +1069,24 @@
       - name: Show
         uid: az_consumption_pricesheet_show
         displayName: az consumption pricesheet show
-    - name: Reservations
-      uid: az_consumption_reservations
-      displayName: az consumption reservations
+    - name: Reservation
+      uid: az_consumption_reservation
+      displayName: az consumption reservation
       items:
-      - name: Details
-        uid: az_consumption_reservations_details
-        displayName: az consumption reservations details
+      - name: Detail
+        uid: az_consumption_reservation_detail
+        displayName: az consumption reservation detail
         items:
         - name: List
-          uid: az_consumption_reservations_details_list
-          displayName: az consumption reservations details list
-      - name: Summaries
-        uid: az_consumption_reservations_summaries
-        displayName: az consumption reservations summaries
+          uid: az_consumption_reservation_detail_list
+          displayName: az consumption reservation detail list
+      - name: Summary
+        uid: az_consumption_reservation_summary
+        displayName: az consumption reservation summary
         items:
         - name: List
-          uid: az_consumption_reservations_summaries_list
-          displayName: az consumption reservations summaries list
+          uid: az_consumption_reservation_summary_list
+          displayName: az consumption reservation summary list
     - name: Usage
       uid: az_consumption_usage
       displayName: az consumption usage
@@ -3077,6 +3121,9 @@
       - name: Delete
         uid: az_mysql_server_delete
         displayName: az mysql server delete
+      - name: Georestore
+        uid: az_mysql_server_georestore
+        displayName: az mysql server georestore
       - name: List
         uid: az_mysql_server_list
         displayName: az mysql server list
@@ -3704,6 +3751,25 @@
         - name: Update
           uid: az_network_dns_zone_update
           displayName: az network dns zone update
+    - name: Ddos-Protection
+      uid: az_network_ddos_protection
+      displayName: az network ddos-protection
+      items:
+      - name: Create
+        uid: az_network_ddos_protection_create
+        displayName: az network ddos-protection create
+      - name: Delete
+        uid: az_network_ddos_protection_delete
+        displayName: az network ddos-protection delete
+      - name: List
+        uid: az_network_ddos_protection_list
+        displayName: az network ddos-protection list
+      - name: Show
+        uid: az_network_ddos_protection_show
+        displayName: az network ddos-protection show
+      - name: Update
+        uid: az_network_ddos_protection_update
+        displayName: az network ddos-protection update
     - name: Express Route
       uid: az_network_express_route
       displayName: az network express-route
@@ -4477,6 +4543,9 @@
       - name: Delete
         uid: az_postgres_server_delete
         displayName: az postgres server delete
+      - name: Georestore
+        uid: az_postgres_server_georestore
+        displayName: az postgres server georestore
       - name: List
         uid: az_postgres_server_list
         displayName: az postgres server list
@@ -5096,6 +5165,16 @@
       - name: Update
         uid: az_sql_elastic_pool_update
         displayName: az sql elastic-pool update
+      - name: Op
+        uid: az_sql_elastic_pool_op
+        displayName: az sql elastic-pool op
+        items:
+        - name: Cancel
+          uid: az_sql_elastic_pool_op_cancel
+          displayName: az sql elastic-pool op cancel
+        - name: List
+          uid: az_sql_elastic_pool_op_list
+          displayName: az sql elastic-pool op list
     - name: Server
       uid: az_sql_server
       displayName: az sql server
@@ -6191,9 +6270,6 @@
     uid: az_vmss
     displayName: az vmss
     items:
-    - name: Assign-Identity
-      uid: az_vmss_assign_identity
-      displayName: az vmss assign-identity
     - name: Create
       uid: az_vmss_create
       displayName: az vmss create
@@ -6227,9 +6303,6 @@
     - name: Reimage
       uid: az_vmss_reimage
       displayName: az vmss reimage
-    - name: Remove-Identity
-      uid: az_vmss_remove_identity
-      displayName: az vmss remove-identity
     - name: Restart
       uid: az_vmss_restart
       displayName: az vmss restart
@@ -6387,9 +6460,6 @@
     uid: az_vm
     displayName: az vm
     items:
-    - name: Assign-Identity
-      uid: az_vm_assign_identity
-      displayName: az vm assign-identity
     - name: Capture
       uid: az_vm_capture
       displayName: az vm capture
@@ -6405,9 +6475,6 @@
     - name: Delete
       uid: az_vm_delete
       displayName: az vm delete
-    - name: Format-Secret
-      uid: az_vm_format_secret
-      displayName: az vm format-secret
     - name: Generalize
       uid: az_vm_generalize
       displayName: az vm generalize
@@ -6441,9 +6508,6 @@
     - name: Redeploy
       uid: az_vm_redeploy
       displayName: az vm redeploy
-    - name: Remove-Identity
-      uid: az_vm_remove_identity
-      displayName: az vm remove-identity
     - name: Resize
       uid: az_vm_resize
       displayName: az vm resize
@@ -6681,9 +6745,6 @@
     uid: az_webapp
     displayName: az webapp
     items:
-    - name: Assign-Identity
-      uid: az_webapp_assign_identity
-      displayName: az webapp assign-identity
     - name: Browse
       uid: az_webapp_browse
       displayName: az webapp browse
